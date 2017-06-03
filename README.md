@@ -2,7 +2,7 @@
 
 ### NOTE: This thing is still a Work in Progress. Files, instructions, and other stuff might change!
 
-## In this project included the following internal search algorithms:
+## In this project included the following search algorithms:
 
 ### -Linear search: <br/>
 The simplest search algorithm is linear search. In linear search, we look at each item in the list in turn,
@@ -19,7 +19,7 @@ search starting at the point halfway between the first item and the middle item.
 the lower half of the list and repeat our search starting at the point halfway between the middle item and
 the last item.
 
-## In this project included the following internal sorting algorithms:
+## In this project included the following sorting algorithms:
 
 ### -Bubble sort:<br/>
 The idea behind bubble sort is similar to the idea behind selection sort: on each pass through the algorithm,
@@ -59,16 +59,16 @@ The algorithm repeats until all of these “sublists” have exactly one element in 
 the name), until we get our original list back — sorted, of course.<br/>
 
 
-### Summary:<br/>
+### Summary:<br/><br/>
 • Selection sort’s advantage is that the number of swaps is O(N), since we perform at most one data
 swap per pass through the algorithm. Its disadvantage is that it does not stop early if the list is sorted;
-it looks at every element in the list in turn.<br/>
+it looks at every element in the list in turn.<br/><br/>
 • Bubble sort’s advantage is that it stops once it determines that the list is sorted. Its disadvantage is
 that it is O(N2) in both swaps and comparisons. For this reason, bubble sort is actually the least
-efficient sorting method.<br/>
+efficient sorting method.<br/><br/>
 • Quicksort is the fastest sort: it is O(NlogN) in both the number of comparisons and the number of
 swaps. The disadvantages of quicksort are that the algorithm is a bit tricky to understand, and if we
-continually select poor pivots then the algorithm can approach O(N2) in the worst case.<br/>
+continually select poor pivots then the algorithm can approach O(N2) in the worst case.<br/><br/>
 • Merge sort is as fast as quicksort: it is O(NlogN) in both swaps and comparisons. The disadvantage
 of merge sort is that it requires more copying of data from temporary lists back to the “full” list, which
 slows down the algorithm a bit.
