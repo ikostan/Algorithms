@@ -59,9 +59,7 @@ The algorithm repeats until all of these “sublists” have exactly one element in 
 the name), until we get our original list back — sorted, of course.
 
 
-### Summary: two O(N2
-) sorts (selection sort and bubble sort), and two
-O(NlogN) sorts (quicksort and merge sort). Each sorting algorithm has its advantages and disadvantages:
+### Summary:
 • Selection sort’s advantage is that the number of swaps is O(N), since we perform at most one data
 swap per pass through the algorithm. Its disadvantage is that it does not stop early if the list is sorted;
 it looks at every element in the list in turn.
