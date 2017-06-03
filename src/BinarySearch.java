@@ -28,6 +28,7 @@ public class BinarySearch extends SearchClass implements SearchMethod {
 		int end = this.getDataObj().length - 1;
 		int mid = (start + end) / 2;
 		int iterations = 0;
+		String array = Arrays.toString(this.getDataObj());
 		String output = "";
 		
 		while(true){
@@ -37,7 +38,7 @@ public class BinarySearch extends SearchClass implements SearchMethod {
 			if(var == super.getAim()){
 				
 				output = String.format("\"%d\" has been found at index %d after %d iterations", super.getAim(), mid, iterations);
-				System.out.println(output);
+				System.out.println(array + "\n" + output + "\n");
 				break;
 			}
 			else if(var < super.getAim()){
@@ -53,7 +54,7 @@ public class BinarySearch extends SearchClass implements SearchMethod {
 			
 			if(end < start){
 				output = String.format("\"%d\" has not been found after %d iterations", super.getAim(), iterations);
-				System.out.println(output);
+				System.out.println(array + "\n" + output + "\n");
 				break;
 			}
 			
