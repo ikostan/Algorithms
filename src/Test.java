@@ -15,7 +15,11 @@ public class Test {
 		//binarySearch();
 		//linearSearch();
 		//bubbleSort();
-		insertionSort();
+		//insertionSort();
+		
+		selectionSort();
+		quickSort();
+		mergeSort();
 	}
 
 	//Test case #1 - Binary search
@@ -58,5 +62,26 @@ public class Test {
 		insertion.sort();
 	}
 	
+	//Test case #5 - Selection sort
+	public static void selectionSort(){
+		
+		SelectionSort selection = new SelectionSort(intArray);
+		selection.sort();
+	}
+	
+	//Test case #6 - Quick sort
+	public static void quickSort(){
+	
+		QuickSort quick = new QuickSort(intArray);
+		quick.sort();
+	}	
+
+	//Test case #7 - Merge sort
+	public static void mergeSort(){
+	
+		MergeSort merge = new MergeSort(intArray);
+		merge.sort();
+	}	
+
 	//END OF CLASS
 }

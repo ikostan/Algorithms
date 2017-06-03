@@ -71,7 +71,7 @@ public class InsertionSort extends SearchClass implements SearchMethod {
 	}
 
 	
-	//By the book custom method
+	//By the book method
 	private void byTheBook(int[] array, int iterations){
 		
 		int i, j, key, temp;
