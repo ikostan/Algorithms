@@ -8,13 +8,14 @@ public class Test {
 	public static void main(String[] args){
 
 		rnd = new Random();
-		intArray = new int[]{6,9,1,5,8,0,12,7,30,-5,23,13,-12,7,23,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55};
+		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55};
 		
 		//Uncomment relevant method (see below) in order to run it
 		
 		//binarySearch();
 		//linearSearch();
-		bubbleSort();
+		//bubbleSort();
+		insertionSort();
 	}
 
 	//Test case #1 - Binary search
@@ -48,6 +49,13 @@ public class Test {
 		
 		BubbleSort bubble = new BubbleSort(intArray);
 		bubble.sort();
+	}
+	
+	//Test case #4 - Insertion sort
+	public static void insertionSort(){
+		
+		InsertionSort insertion = new InsertionSort(intArray);
+		insertion.sort();
 	}
 	
 	//END OF CLASS
