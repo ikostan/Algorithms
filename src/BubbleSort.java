@@ -26,15 +26,18 @@ public class BubbleSort extends SearchClass implements SearchMethod{
 			array[indx] = super.getDataObj()[indx];
 		}
 			
+		String start = "Unsorted array\n" + Arrays.toString(array);
+		System.out.println(start + "\n");
+		
 		for(int i = 0; i < array.length - 1; i++){
 				
-			for(int b = i + 1; b < array.length; b++){
+			for(int b = i + 1; b < array.length - 1; b++){
 					
 				if(array[i] > array[b]){
 						
-					int temp = array[b];
-					array[b] = array[i];
-					array[i] = temp;
+					int temp = array[i];
+					array[i] = array[b];
+					array[b] = temp;
 				}
 					
 				iterations++;
