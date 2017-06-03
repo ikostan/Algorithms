@@ -70,6 +70,9 @@ public class BinarySearch extends SearchClass implements SearchMethod {
 		return obj;
 	}
 
+	@Override
+	public void sort() {}
+
 	
 	//END OF CLASS
 }

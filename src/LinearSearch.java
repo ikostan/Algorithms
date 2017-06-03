@@ -5,7 +5,7 @@ public class LinearSearch extends SearchClass implements SearchMethod {
 	static private String className = "Linear Search";
 	
 	//Constructor
-	LinearSearch(String className) {
+	LinearSearch() {
 		super(className);
 	}
 	
@@ -43,5 +43,8 @@ public class LinearSearch extends SearchClass implements SearchMethod {
 		
 		System.out.println(output + "\n");
 	}
+
+	@Override
+	public void sort() {}
 
 }

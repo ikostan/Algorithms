@@ -27,6 +27,8 @@ public class Test {
 			linear.search();
 		}
 		
+		BubbleSort bubble = new BubbleSort(intArray);
+		bubble.sort();
 	}
 
 	
