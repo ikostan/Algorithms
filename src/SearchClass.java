@@ -19,6 +19,14 @@ public class SearchClass {
 		dataObj = newDataObj;
 	}
 	
+	//Constructor
+	SearchClass(String className, int[] newDataObj, int newAim){
+			
+		classDescription = String.format("This is %s class", className);
+		dataObj = newDataObj;
+		aim = newAim;
+	}
+	
 	//Setter - set a new array object
 	public void setDataObj(int[] newDataObj){
 		
@@ -31,4 +39,18 @@ public class SearchClass {
 		return dataObj;
 	}
 	
+	//Setter - set a new aim
+	public void setAim(int newAim){
+			
+		aim = newAim;
+	}
+		
+	//Getter - set a new aim
+	public int getAim(){
+				
+		return aim;
+	}
+	
+	
+	//END OF CLASS
 }
