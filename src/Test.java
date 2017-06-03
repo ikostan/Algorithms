@@ -17,6 +17,16 @@ public class Test {
 			binary.search();
 		}
 		
+		//Test case #2 - Linear search
+		LinearSearch linear = new LinearSearch(intArray);
+		
+		for(int i = 0; i < 30; i++){
+			
+			int newAim = rnd.nextInt(70) - 25;
+			linear.setAim(newAim);
+			linear.search();
+		}
+		
 	}
 
 	
