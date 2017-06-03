@@ -1,6 +1,17 @@
 # Java Algorithms
 
 ### NOTE: This thing is still a Work in Progress. Files, instructions, and other stuff might change!
+### NOTE: For more info about algorithms please read following document https://github.com/ikostan/Algorithms/blob/master/files/searchSort.pdf
+
+## Introduction:<br/>
+
+![GUI](https://github.com/ikostan/Algorithms/blob/master/files/BigOh.JPG?raw=true "GUI screenshot")
+
+Ideally, when talking about any algorithm, we want the number of operations in the algorithm to increase
+as slowly as possible as N increases. The best-performing algorithm is O(1), which means that the algorithm
+executes in constant time. There are very few algorithms for which this is true, so the next best algorithm
+is O(logN).<br/>
+
 
 ## In this project included the following search algorithms:
 
@@ -59,7 +70,7 @@ The algorithm repeats until all of these “sublists” have exactly one element in 
 the name), until we get our original list back — sorted, of course.<br/>
 
 
-### Summary:<br/><br/>
+### Summary:<br/>
 • Selection sort’s advantage is that the number of swaps is O(N), since we perform at most one data
 swap per pass through the algorithm. Its disadvantage is that it does not stop early if the list is sorted;
 it looks at every element in the list in turn.<br/><br/>
