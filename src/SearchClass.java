@@ -51,6 +51,5 @@ public class SearchClass {
 		return aim;
 	}
 	
-	
 	//END OF CLASS
 }

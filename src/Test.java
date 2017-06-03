@@ -5,7 +5,7 @@ public class Test {
 	static Random rnd;
 	static int[] intArray;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 
 		rnd = new Random();
 		intArray = new int[]{6,9,1,5,8,0,12,7,30,-5,23,13,-12,7,23,8,1,9,-3,-8,18,-20,33,40,47,55};

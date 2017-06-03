@@ -47,4 +47,5 @@ public class LinearSearch extends SearchClass implements SearchMethod {
 	@Override
 	public void sort() {}
 
+	//END OF CLASS
 }

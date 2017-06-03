@@ -7,18 +7,18 @@ public class BubbleSort extends SearchClass implements SearchMethod{
 	static private String className = "Bubble Sort";
 	
 	//Constructor
-	BubbleSort() {
+	BubbleSort(){
 		super(className);
 	}
 	
 	//Constructor
-	BubbleSort(int[] newDataObj) {
+	BubbleSort(int[] newDataObj){
 		super(className, newDataObj);
 	}
 
 	//BubbleSort algorithm
 	@Override
-	public void sort() {
+	public void sort(){
 		
 		int iterations = 0;		
 		int[] array =  new int[super.getDataObj().length];
@@ -46,9 +46,8 @@ public class BubbleSort extends SearchClass implements SearchMethod{
 		System.out.println(output + "\n" + sortedArray);
 	}
 	
-
 	@Override
-	public void search() {}
+	public void search(){}
 
 	//END OF CLASS
 }
