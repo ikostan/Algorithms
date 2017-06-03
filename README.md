@@ -43,6 +43,7 @@ If we assume that we start at the beginning of the list, this means that at each
 the largest remaining item in the list will be placed at its proper location in the list.
 
 ### -Insertion sort:<br/>
+This is the idea behind insertion sort. Loop over positions in the array, starting with index 1. Each new position is like the new card handed to you by the dealer, and you need to insert it into the correct place in the sorted subarray to the left of that position.<br/>
 
 ### -Selection sort:<br/>
 The idea behind selection sort is that we put a list in order by placing each item in turn. In other words,
