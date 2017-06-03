@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+//Bubble sort class
 public class BubbleSort extends SearchClass implements SearchMethod{
 
 	//Class fields
