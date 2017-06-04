@@ -51,5 +51,11 @@ public class SearchClass {
 		return aim;
 	}
 	
+	//Get class name/description
+	public String getDescription(){
+		
+		return classDescription;
+	}
+	
 	//END OF CLASS
 }

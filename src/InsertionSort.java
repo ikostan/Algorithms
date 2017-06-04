@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 //Insertion sort class
-public class InsertionSort extends SearchClass implements SearchMethod {
+public class InsertionSort extends SearchClass implements SearchMethod, Runnable {
 
 	//Class fields
 	static private String className = "Insertion Sort";
@@ -85,10 +85,18 @@ public class InsertionSort extends SearchClass implements SearchMethod {
 		System.out.println(output + "\n" + sortedArray + "\n");
 			
 	}
-	
-	
+		
 	@Override
 	public void search() {}
+	
+	//Multi-Threading
+		@Override
+		public void run() {
+			
+			System.out.println(String.format("Thread Started -> %s", super.getDescription()));
+			sort();
+			System.out.println(String.format("Thread Finished -> %s\n", super.getDescription()));
+		}
 	
 	//END OF CLASS
 }

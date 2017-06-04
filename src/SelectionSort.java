@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SelectionSort extends SearchClass implements SearchMethod{
+public class SelectionSort extends SearchClass implements SearchMethod, Runnable{
 
 	//Class fields
 	static private String className = "Selection Sort";
@@ -108,6 +108,15 @@ public class SelectionSort extends SearchClass implements SearchMethod{
 	
 	@Override
 	public void search() {}
+	
+	//Multi-Threading
+	@Override
+	public void run() {
+			
+		System.out.println(String.format("Thread Started -> %s", super.getDescription()));
+		sort();
+		System.out.println(String.format("Thread Finished -> %s\n", super.getDescription()));
+	}
 	
 	//END OF CLASS
 }

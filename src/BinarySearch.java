@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class BinarySearch extends SearchClass implements SearchMethod {
+public class BinarySearch extends SearchClass implements SearchMethod, Runnable {
 	
 	//Class fields
 	static private String className = "Binary Search";
@@ -72,6 +72,16 @@ public class BinarySearch extends SearchClass implements SearchMethod {
 
 	@Override
 	public void sort() {}
+
+	
+	//Multi-Threading
+	@Override
+	public void run() {
+
+		System.out.println(String.format("Thread Started -> %s", super.getDescription()));
+		search();
+		System.out.println(String.format("Thread Finished -> %s\n", super.getDescription()));
+	}
 
 	
 	//END OF CLASS

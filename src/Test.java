@@ -5,6 +5,8 @@ public class Test {
 	static Random rnd;
 	static int[] intArray;
 	
+	static Thread bnThread, lnThread, blThread, selectThread, insertThread;
+	
 	public static void main(String[] args){
 
 		rnd = new Random();
@@ -12,15 +14,53 @@ public class Test {
 		
 		//Uncomment relevant method (see below) in order to run it
 		
+		BinarySearch binary = new BinarySearch(intArray);
+		bnThread = new Thread(binary);
+		
+		LinearSearch linear = new LinearSearch(intArray);	
+		lnThread = new Thread(linear);
+		
+		BubbleSort bubble = new BubbleSort(intArray);
+		blThread = new Thread(bubble);
+		
+		InsertionSort insertion = new InsertionSort(intArray);
+		insertThread = new Thread(insertion);
+		
+		SelectionSort selection = new SelectionSort(intArray);
+		selectThread = new Thread(selection);
+		
+		int newAim;
+		
+		//for(int i = 0; i < 10; i++){
+			
+			newAim = rnd.nextInt(70) - 25;
+			
+			linear.setAim(newAim);
+			binary.setAim(newAim);
+			
+			runThreads();
+		//}
+		
+
 		//binarySearch();
 		//linearSearch();
-		bubbleSort();
+		//bubbleSort();
 		//insertionSort();		
 		//selectionSort();
 		//quickSort();
 		//mergeSort();
 	}
 
+	//Run threads
+	private static void runThreads(){
+		
+		lnThread.start();
+		bnThread.start();
+		blThread.start();
+		insertThread.start();
+		selectThread.start();
+	}
+	
 	//Test case #1 - Binary search
 	public static void binarySearch(){
 		
@@ -37,13 +77,15 @@ public class Test {
 	//Test case #2 - Linear search
 	public static void linearSearch(){
 		
-		LinearSearch linear = new LinearSearch(intArray);
-				
+		LinearSearch linear = new LinearSearch(intArray);	
+		//Thread lnThread = new Thread(linear);
+		
 		for(int i = 0; i < 30; i++){
 					
 			int newAim = rnd.nextInt(70) - 25;
 			linear.setAim(newAim);
 			linear.search();
+			//lnThread.start();
 		}
 	}	
 	
@@ -80,7 +122,7 @@ public class Test {
 	
 		MergeSort merge = new MergeSort(intArray);
 		merge.sort();
-	}	
+	}
 
 	//END OF CLASS
 }

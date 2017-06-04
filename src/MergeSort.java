@@ -1,5 +1,5 @@
 
-public class MergeSort extends SearchClass implements SearchMethod{
+public class MergeSort extends SearchClass implements SearchMethod, Runnable{
 
 	//Class fields
 	static private String className = "Merge Sort";
@@ -23,5 +23,14 @@ public class MergeSort extends SearchClass implements SearchMethod{
 	@Override
 	public void search() {}
 
+	//Multi-Threading
+	@Override
+	public void run() {
+			
+		System.out.println(String.format("Thread Started -> %s", super.getDescription()));
+		search();
+		System.out.println(String.format("Thread Finished -> %s\n", super.getDescription()));
+	}
+	
 	//END OF CLASS
 }
