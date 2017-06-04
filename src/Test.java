@@ -14,9 +14,9 @@ public class Test {
 		
 		//binarySearch();
 		//linearSearch();
-		//bubbleSort();
+		bubbleSort();
 		//insertionSort();		
-		selectionSort();
+		//selectionSort();
 		//quickSort();
 		//mergeSort();
 	}

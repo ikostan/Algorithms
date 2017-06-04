@@ -31,6 +31,7 @@ public class BubbleSort extends SearchClass implements SearchMethod{
 		boolean isSorted = true;
 		
 		//iterations = methodByTheBook(array, isSorted, iterations); //By the book method
+		//iterations = conventionalMethod(array, isSorted, iterations); //By the book method
 		iterations = methodCustom(array, isSorted, iterations); //My custom method
 			
 		String output = "Array is sorted after " + iterations + " iterations";
@@ -64,6 +65,27 @@ public class BubbleSort extends SearchClass implements SearchMethod{
 			}
 		}
 		
+		return iterations;
+	}
+	
+	//By the book method
+	private int conventionalMethod(int[] array, boolean isSorted, int iterations){
+			
+		for(int i=0; i < array.length; i++){ 
+			
+			for(int j=1; j < (array.length - i); j++){
+            	
+				if(array[j-1] > array[j]){  
+					//swap elements  
+					int temp = array[j-1];  
+					array[j-1] = array[j];  
+					array[j] = temp;  
+				}  
+				
+				iterations++;   
+			}  
+		}  
+						
 		return iterations;
 	}
 	
