@@ -17,7 +17,7 @@ public class SelectionSort extends SearchClass implements SearchMethod{
 
 	@Override
 	public void sort() {
-		// TODO Auto-generated method stub
+		
 		int iterations = 0;
 		int[] array = new int[super.getDataObj().length];
 		
@@ -28,6 +28,45 @@ public class SelectionSort extends SearchClass implements SearchMethod{
 		
 		String start = "Unsorted array\n" + Arrays.toString(array);
 		System.out.println(start + "\n");
+		
+		iterations = customSort(array, iterations); //Custom method
+		//iterations = conventionalSort(array, iterations); //ByTheBook SelectionSort metho
+		
+		String output = "Array is sorted after " + iterations + " iterations";
+		String sortedArray = Arrays.toString(array);
+		System.out.println(output + "\n" + sortedArray + "\n");	
+	}
+	
+	//ByTheBook SelectionSort method
+	private int conventionalSort(int[] array, int iterations){
+
+		for (int j = 0; j < array.length - 1; j++){
+
+		    int iMin = j;
+		    
+		    for (int i = j + 1; i < array.length; i++) {
+
+		    	if (array[i] < array[iMin]) {
+		    		
+		            iMin = i;
+		        }
+		    	
+		    	iterations++;
+		    }
+
+		    if(iMin != j) 
+		    {
+		        int temp = array[j];
+		        array[j] = array[iMin];
+		        array[iMin] = temp;
+		    }
+		}
+		
+		return iterations;
+	}
+	
+	//My custom SelectionSort method
+	private int customSort(int[] array, int iterations){
 		
 		int min, minIndx;
 		boolean isSorted;
@@ -57,15 +96,14 @@ public class SelectionSort extends SearchClass implements SearchMethod{
 				array[minIndx] = array[a];
 				array[a] = temp;
 			}
-			else if(isSorted == true){
+			
+			if(isSorted == true){
 				
 				break;
 			}
 		}
-				
-		String output = "Array is sorted after " + iterations + " iterations";
-		String sortedArray = Arrays.toString(array);
-		System.out.println(output + "\n" + sortedArray + "\n");	
+		
+		return iterations;
 	}
 	
 	@Override

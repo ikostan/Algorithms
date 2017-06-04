@@ -16,7 +16,7 @@ public class Test {
 		//linearSearch();
 		//bubbleSort();
 		//insertionSort();		
-		//selectionSort();
+		selectionSort();
 		//quickSort();
 		//mergeSort();
 	}
