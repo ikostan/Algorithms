@@ -41,26 +41,18 @@ public class InsertionSort extends SearchClass implements SearchMethod {
 				
 			for(int b = i; b > 0; b--){
 
-				try{
-						
-					if(array[b - 1] > array[b]){
+				if(array[b - 1] > array[b]){
 							
-						int temp = array[b - 1];
-						array[b - 1] = array[b];
-						array[b] = temp;
-					}
-					else if(array[b - 1] < array[b]){
+					int temp = array[b - 1];
+					array[b - 1] = array[b];
+					array[b] = temp;
+				}
+				else if(array[b - 1] < array[b]){
 							
-						break;
-					}
-						
-					iterations++;
+					break;
 				}
-				catch(Exception ex){
 						
-					System.out.println(String.format("i: %d b: %d", i, b));
-					System.out.println(ex.getMessage());
-				}
+				iterations++;
 			}		
 		}
 			
@@ -75,6 +67,7 @@ public class InsertionSort extends SearchClass implements SearchMethod {
 	private void byTheBook(int[] array, int iterations){
 		
 		int i, j, key, temp;
+		
 		for (i = 1; i < array.length; i++) {
 			key = array[i];
 			j = i - 1;

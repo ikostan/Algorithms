@@ -15,11 +15,10 @@ public class Test {
 		//binarySearch();
 		//linearSearch();
 		//bubbleSort();
-		//insertionSort();
-		
-		selectionSort();
-		quickSort();
-		mergeSort();
+		//insertionSort();		
+		//selectionSort();
+		//quickSort();
+		//mergeSort();
 	}
 
 	//Test case #1 - Binary search
