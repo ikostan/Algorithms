@@ -5,13 +5,24 @@
 
 ## Introduction:<br/>
 
-![GUI](https://github.com/ikostan/Algorithms/blob/master/files/BigOh.JPG?raw=true "GUI screenshot")
-![GUI](https://courses.cs.vt.edu/~csonline/Algorithms/Lessons/OrderNotation/chart.gif?raw=true "GUI screenshot")
+### Efficiency: 
+Algorithmic efficiency is the measure of how well a routine can perform a computational task. One analogy for algorithmic efficiency and its dependence on hardware (memory capacity and processor speed) is the task of moving a ton of bricks from one location to another a mile a way.  If you use a Lamborghini for this job (small storage but fast acceleration), you will be able to move a small amount of bricks very quickly, but the down side is that you will have to repeat the trip multiple times.  On the other hand, if you use a flatbed truck (large storage but slow acceleration) you will be able to complete the entire project in a single run, albeit at slower pace.
+
+### Notation: 
+The expression for algorithmic efficiency is commonly referred to as “Big O” notation.  This is a mathematical representation of how the algorithm grows over time. When plotted as a function, algorithms will remain flat, grow steadily over time, or follow varying curves.
+
+### The Pessimistic Nature of Algorithms: 
+In the world of algorithm analysis, we always assume the worst case scenario.  For example, if you have an unsorted list of unique numbers and it’s going to take your routine an hour to go through it, then it is possible in the best case scenario that you could find your value on the first try (taking only a minute). But following the worst case scenario theory, your number could end up being the last one in the list (taking you the full 60 minutes to find it). When we look at efficiency, it’s necessary to assume the worst case scenario.
+
+![GUI](https://apelbaum.files.wordpress.com/2011/10/yaacovapelbaumbigoplot_thumb.jpg?w=576&h=441?raw=true "GUI screenshot")<br/>
 
 Ideally, when talking about any algorithm, we want the number of operations in the algorithm to increase
 as slowly as possible as N increases. The best-performing algorithm is O(1), which means that the algorithm
 executes in constant time. There are very few algorithms for which this is true, so the next best algorithm
 is O(logN).<br/>
+
+![GUI](https://github.com/ikostan/Algorithms/blob/master/files/BigOh.JPG?raw=true "GUI screenshot")
+![GUI](https://courses.cs.vt.edu/~csonline/Algorithms/Lessons/OrderNotation/chart.gif?raw=true "GUI screenshot")
 
 
 ## In this project included the following search algorithms:
