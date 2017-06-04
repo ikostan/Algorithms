@@ -6,6 +6,7 @@
 ## Introduction:<br/>
 
 ![GUI](https://github.com/ikostan/Algorithms/blob/master/files/BigOh.JPG?raw=true "GUI screenshot")
+![GUI](https://courses.cs.vt.edu/~csonline/Algorithms/Lessons/OrderNotation/chart.gif?raw=true "GUI screenshot")
 
 Ideally, when talking about any algorithm, we want the number of operations in the algorithm to increase
 as slowly as possible as N increases. The best-performing algorithm is O(1), which means that the algorithm

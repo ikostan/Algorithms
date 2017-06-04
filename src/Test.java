@@ -51,11 +51,11 @@ public class Test {
 	//Run threads
 	private static void runThreads(){
 		
-		lnThread.start();
-		bnThread.start();
-		blThread.start();
-		insertThread.start();
-		selectThread.start();
+		//lnThread.start();
+		//bnThread.start();
+		//blThread.start();
+		//insertThread.start();
+		//selectThread.start();
 	}
 	
 	//Test case #1 - Binary search
