@@ -9,11 +9,10 @@ public class Test {
 	
 	public static void main(String[] args){
 
-		rnd = new Random();
-		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55};
+		rnd = new Random(); //Random object
 		
-		//Uncomment relevant method (see below) in order to run it
-		
+		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55}; //Test data
+				
 		BinarySearch binary = new BinarySearch(intArray);
 		bnThread = new Thread(binary);
 		
@@ -29,18 +28,16 @@ public class Test {
 		SelectionSort selection = new SelectionSort(intArray);
 		selectThread = new Thread(selection);
 		
-		int newAim;
+		int newAim;	
+			
+		newAim = rnd.nextInt(70) - 25;
+			
+		linear.setAim(newAim);
+		binary.setAim(newAim);
+			
+		runThreads(); //Multi-Threaded process
 		
-		//for(int i = 0; i < 10; i++){
-			
-			newAim = rnd.nextInt(70) - 25;
-			
-			linear.setAim(newAim);
-			binary.setAim(newAim);
-			
-			runThreads();
-		//}
-		
+		//Uncomment relevant method (see below) in order to run it (NOTE: single-threaded)
 
 		//binarySearch();
 		//linearSearch();
