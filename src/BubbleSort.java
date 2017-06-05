@@ -30,8 +30,9 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 		System.out.println(start + "\n");
 		boolean isSorted = true;
 		
-		//iterations = methodByTheBook(array, isSorted, iterations); //By the book method
+		////iterations = methodByTheBook(array, isSorted, iterations); //By the book method(wrong implementation)
 		//iterations = conventionalMethod(array, isSorted, iterations); //By the book method
+		//iterations = hackerRankVersion(array, isSorted, iterations);
 		iterations = methodCustom(array, isSorted, iterations); //My custom method
 			
 		String output = "Array is sorted after " + iterations + " iterations";
@@ -46,7 +47,7 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 			
 			isSorted = true;
 			
-			for(int b = 0; b < array.length - i - 1; b++){
+			for(int b = 0; b < array.length; b++){
 					
 				if(array[b] > array[b + 1]){
 						
@@ -71,7 +72,7 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 	//By the book method
 	private int conventionalMethod(int[] array, boolean isSorted, int iterations){
 			
-		for(int i=0; i < array.length; i++){ 
+		for(int i=0; i < array.length - 1; i++){ 
 			
 			for(int j=1; j < (array.length - i); j++){
             	
@@ -89,6 +90,33 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 		return iterations;
 	}
 	
+	//By the book method
+	private int hackerRankVersion(int[] array, boolean isSorted, int iterations){
+		
+		isSorted = false;
+		int lastUnsorted = array.length - 1;
+		
+		while(!isSorted){
+			
+			isSorted = true;
+			for(int i = 0; i < lastUnsorted; i++){
+				
+				if(array[i] > array[i + 1]){
+					
+					int temp = array[i + 1];
+					array[i + 1] = array[i];
+					array[i] = temp;
+					
+					isSorted = false;
+				}
+				
+				iterations++;
+			}
+		}
+		
+		return iterations;
+	}
+	
 	//My custom method
 	private int methodCustom(int[] array, boolean isSorted, int iterations){
 		
@@ -96,7 +124,7 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 			
 			isSorted = true;
 			
-			for(int b = i + 1; b < array.length - 1; b++){
+			for(int b = i + 1; b < array.length; b++){
 					
 				if(array[i] > array[b]){
 						

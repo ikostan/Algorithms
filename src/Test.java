@@ -5,14 +5,17 @@ public class Test {
 	static Random rnd;
 	static int[] intArray;
 	
-	static Thread bnThread, lnThread, blThread, selectThread, insertThread;
+	static Thread bnThread, lnThread, blThread, selectThread, insertThread, mrgThread, quickThread;
 	
 	public static void main(String[] args){
 
 		rnd = new Random(); //Random object
 		
-		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55}; //Test data
+		//Test data
+		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55}; 
 				
+		//intArray = new int[]{5,4,3,2,1};
+		
 		BinarySearch binary = new BinarySearch(intArray);
 		bnThread = new Thread(binary);
 		
@@ -27,6 +30,9 @@ public class Test {
 		
 		SelectionSort selection = new SelectionSort(intArray);
 		selectThread = new Thread(selection);
+		
+		MergeSort merge = new MergeSort(intArray);
+		mrgThread = new Thread(merge);
 		
 		int newAim;	
 			
@@ -56,6 +62,8 @@ public class Test {
 		//blThread.start();
 		//insertThread.start();
 		//selectThread.start();
+		mrgThread.start();
+		//quickThread.start();
 	}
 	
 	//Test case #1 - Binary search
