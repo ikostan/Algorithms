@@ -30,8 +30,8 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 		System.out.println(start + "\n");
 		
 		//iterations = customSort(array, iterations); //Custom method
-		iterations = conventionalTwo(array, iterations); //Custom method
-		//iterations = conventionalSort(array, iterations); //ByTheBook SelectionSort metho
+		//iterations = conventionalTwo(array, iterations); //Custom method
+		iterations = conventionalSort(array, iterations); //ByTheBook SelectionSort metho
 		
 		String output = "Array is sorted after " + iterations + " iterations";
 		String sortedArray = Arrays.toString(array);
@@ -71,18 +71,22 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 		
 		int n = array.length;
 		 
-        // One by one move boundary of unsorted subarray
-        for (int i = 0; i < n-1; i++)
+        // One by one move boundary of unsorted sub-array
+        for (int i = 0; i < n - 1; i++)
         {
             // Find the minimum element in unsorted array
             int min_idx = i;
-            for (int j = i+1; j < n; j++){
-                if (array[j] < array[min_idx])
+            
+            for (int j = i + 1; j < n; j++){
+            	
+                if (array[j] < array[min_idx]){
+                	
                     min_idx = j;
+                }
+
             	iterations++;
             }
-            // Swap the found minimum element with the first
-            // element
+            // Swap the found minimum element with the first element
             int temp = array[min_idx];
             array[min_idx] = array[i];
             array[i] = temp;
@@ -102,7 +106,6 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 			
 			min = array[a];
 			minIndx = a;
-			isSorted = true;
 			
 			for(int b = a + 1; b < array.length; b++){
 				
@@ -122,9 +125,8 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 				array[minIndx] = array[a];
 				array[a] = temp;
 			}
-			
-			if(isSorted == true){
-				
+			else{
+				//Array is sorted
 				break;
 			}
 		}

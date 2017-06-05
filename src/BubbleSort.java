@@ -30,10 +30,10 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 		System.out.println(start + "\n");
 		boolean isSorted = true;
 		
-		////iterations = methodByTheBook(array, isSorted, iterations); //By the book method(wrong implementation)
+		iterations = methodByTheBook(array, isSorted, iterations); //By the book method
 		//iterations = conventionalMethod(array, isSorted, iterations); //By the book method
 		//iterations = hackerRankVersion(array, isSorted, iterations);
-		iterations = methodCustom(array, isSorted, iterations); //My custom method
+		//iterations = methodCustom(array, isSorted, iterations); //My custom method
 			
 		String output = "Array is sorted after " + iterations + " iterations";
 		String sortedArray = Arrays.toString(array);
@@ -47,7 +47,7 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 			
 			isSorted = true;
 			
-			for(int b = 0; b < array.length; b++){
+			for(int b = 0; b < array.length - i - 1; b++){
 					
 				if(array[b] > array[b + 1]){
 						

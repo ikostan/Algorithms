@@ -44,10 +44,12 @@ public class MergeSort extends SearchClass implements SearchMethod, Runnable{
 			int mid = (start + end) / 2;
 			mergeSort(inputArray, start, mid);
 			mergeSort(inputArray, mid + 1, end);
-			merge(inputArray, start, mid, end);
+			merge(inputArray, start, mid, end); //Merge method
+			//mergeTwo(inputArray, start, mid, end); //Experimental merge method
 		}
 	}
 	
+	//Merge method
 	private static void merge(int[] inputArray, int start, int mid, int end){
 		
 		//Left side
@@ -85,6 +87,43 @@ public class MergeSort extends SearchClass implements SearchMethod, Runnable{
 		}
 	}
 	
+	//Testing merge method
+	private static void mergeTwo(int[] array, int start, int mid, int end){
+
+		int[] LEFT = new int[mid - start + 2];	
+		
+		for(int i = start; i < mid + 1; i++){
+		
+			LEFT[i - start] = array[i];
+		}	
+		LEFT[mid - start + 1] = Integer.MAX_VALUE;
+
+		int[] RIGHT= new int[end - mid + 1];	
+		
+		for(int i = mid + 1; i < end + 1; i++){
+		
+			RIGHT[i - mid - 1] = array[i];	
+		}
+		RIGHT[end - mid] = Integer.MAX_VALUE;
+
+		int i = 0, j = 0, k = start;
+
+		while(i < mid + 1 && k < end + 1){
+			
+			if(LEFT[i] < RIGHT[j]){
+			
+				array[k] = LEFT[i];
+				i++;
+			}
+			else{
+
+				array[k] = RIGHT[j];
+				j++;
+			}		
+
+			k++;
+		}		
+	}	
 	
 	@Override
 	public void search() {}

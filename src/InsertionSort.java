@@ -30,8 +30,8 @@ public class InsertionSort extends SearchClass implements SearchMethod, Runnable
 		String start = "Unsorted array\n" + Arrays.toString(array);
 		System.out.println(start + "\n");
 		
-		//custoMethod(array, iterations); //My custom method
-		byTheBook(array, iterations); //By the book custom method
+		//custoMethod(array, iterations); //My custom method with optimization
+		byTheBook(array, iterations);   //By the book method with optimization
 	}
 		
 	//My custom method
@@ -72,11 +72,21 @@ public class InsertionSort extends SearchClass implements SearchMethod, Runnable
 			key = array[i];
 			j = i - 1;
 			while (j >= 0 && key < array[j]) {
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-				j--;
+				
 				iterations++;
+				
+				if(array[j] > key){
+					
+					temp = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = temp;
+					j--;
+				}
+				else if(array[j] < key){
+					
+					break;
+				}
+				
 			}
 		}
 				

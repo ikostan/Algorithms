@@ -12,9 +12,8 @@ public class Test {
 		rnd = new Random(); //Random object
 		
 		//Test data
-		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55}; 
-				
-		//intArray = new int[]{5,4,3,2,1};
+		intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55}; 				
+		//intArray = new int[]{3,2,1};
 		
 		BinarySearch binary = new BinarySearch(intArray);
 		bnThread = new Thread(binary);
@@ -48,7 +47,7 @@ public class Test {
 		//linearSearch();
 		//bubbleSort();
 		//insertionSort();		
-		//selectionSort();
+		selectionSort();
 		//quickSort();
 		//mergeSort();
 	}
@@ -61,7 +60,7 @@ public class Test {
 		//blThread.start();
 		//insertThread.start();
 		//selectThread.start();
-		mrgThread.start();
+		//mrgThread.start();
 		//quickThread.start();
 	}
 	
