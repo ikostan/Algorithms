@@ -41,10 +41,9 @@ public class Test {
 		linear.setAim(newAim);
 		binary.setAim(newAim);
 			
-		runThreads(); //Multi-Threaded process
+		runThreads(); //Multi-Threaded process. Uncomment relevant method (see inside runThreads method)
 		
 		//Uncomment relevant method (see below) in order to run it (NOTE: single-threaded)
-
 		//binarySearch();
 		//linearSearch();
 		//bubbleSort();
