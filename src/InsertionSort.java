@@ -30,67 +30,37 @@ public class InsertionSort extends SearchClass implements SearchMethod, Runnable
 		String start = "Unsorted array\n" + Arrays.toString(array);
 		System.out.println(start + "\n");
 		
-		//custoMethod(array, iterations); //My custom method with optimization
-		byTheBook(array, iterations);   //By the book method with optimization
+		insertionSort(array, iterations, true);   //By the book method with optimization
 	}
-		
-	//My custom method
-	private void custoMethod(int[] array, int iterations){
 			
-		for(int i = 1; i < array.length; i++){
-				
-			for(int b = i; b > 0; b--){
-
-				if(array[b - 1] > array[b]){
-							
-					int temp = array[b - 1];
-					array[b - 1] = array[b];
-					array[b] = temp;
-				}
-				else if(array[b - 1] < array[b]){
-							
-					break;
-				}
-						
-				iterations++;
-			}		
-		}
-			
-		String output = "Array is sorted after " + iterations + " iterations";
-		String sortedArray = Arrays.toString(array);
-		System.out.println(output + "\n" + sortedArray + "\n");
-		
-	}
-
-	
 	//By the book method
-	private void byTheBook(int[] array, int iterations){
+	private void insertionSort(int[] array, int iterations, boolean isDebug){
 		
-		int i, j, key, temp;
+		//int swap = 0;
 		
-		for (i = 1; i < array.length; i++) {
-			key = array[i];
-			j = i - 1;
-			while (j >= 0 && key < array[j]) {
+		// InsertionSort algorithm
+		for(int i = 1; i < array.length; i++){
+			
+			int j = i;
+			int B = array[j];
+			
+			while((j>0) && (B<array[j-1])){
 				
+				array[j] = array[j-1];
+				j--;
 				iterations++;
 				
-				if(array[j] > key){
-					
-					temp = array[j];
-					array[j] = array[j + 1];
-					array[j + 1] = temp;
-					j--;
+				if(isDebug){
+					//Debug output
+					System.out.println((Arrays.toString(array)));
 				}
-				else if(array[j] < key){
-					
-					break;
-				}
-				
 			}
+			
+			array[j] = B; 
 		}
 				
 		String output = "Array is sorted after " + iterations + " iterations";
+		//String swaps = "Total swaps " + iterations + " iterations";
 		String sortedArray = Arrays.toString(array);
 		System.out.println(output + "\n" + sortedArray + "\n");
 			
@@ -100,13 +70,13 @@ public class InsertionSort extends SearchClass implements SearchMethod, Runnable
 	public void search() {}
 	
 	//Multi-Threading
-		@Override
-		public void run() {
+	@Override
+	public void run() {
 			
-			System.out.println(String.format("Thread Started -> %s", super.getDescription()));
-			sort();
-			System.out.println(String.format("Thread Finished -> %s\n", super.getDescription()));
-		}
-	
+		System.out.println(String.format("Thread Started -> %s", super.getDescription()));
+		sort();
+		System.out.println(String.format("Thread Finished -> %s\n", super.getDescription()));
+	}
+
 	//END OF CLASS
 }

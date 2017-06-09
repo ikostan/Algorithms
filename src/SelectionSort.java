@@ -99,7 +99,7 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 	private int customSort(int[] array, int iterations){
 		
 		int min, minIndx;
-		boolean isSorted;
+		//boolean isSorted;
 		
 		//SelectionSort
 		for(int a = 0; a < array.length - 1; a++){
@@ -113,7 +113,7 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 					
 					min = array[b];
 					minIndx = b;
-					isSorted = false;
+					//isSorted = false;
 				}
 				
 				iterations++;
