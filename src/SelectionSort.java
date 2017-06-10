@@ -29,9 +29,7 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 		String start = "Unsorted array\n" + Arrays.toString(array);
 		System.out.println(start + "\n");
 		
-		//iterations = customSort(array, iterations); //Custom method
-		//iterations = conventionalTwo(array, iterations); //Custom method
-		iterations = conventionalSort(array, iterations); //ByTheBook SelectionSort metho
+		iterations = selectionSort(array, iterations, true); //ByTheBook SelectionSort metho
 		
 		String output = "Array is sorted after " + iterations + " iterations";
 		String sortedArray = Arrays.toString(array);
@@ -39,100 +37,37 @@ public class SelectionSort extends SearchClass implements SearchMethod, Runnable
 	}
 	
 	//ByTheBook SelectionSort method
-	private int conventionalSort(int[] array, int iterations){
+	private int selectionSort(int[] array, int iterations, boolean isDebug){
 
-		for (int j = 0; j < array.length - 1; j++){
-
-		    int iMin = j;
-		    
-		    for (int i = j + 1; i < array.length; i++) {
-
-		    	if (array[i] < array[iMin]) {
-		    		
-		            iMin = i;
-		        }
-		    	
-		    	iterations++;
-		    }
-
-		    if(iMin != j) 
-		    {
-		        int temp = array[j];
-		        array[j] = array[iMin];
-		        array[iMin] = temp;
-		    }
-		}
-		
-		return iterations;
-	}
-	
-	//ByTheBook SelectionSort method (Source: http://www.geeksforgeeks.org/selection-sort/)
-	private int conventionalTwo(int[] array, int iterations){
-		
-		int n = array.length;
-		 
-        // One by one move boundary of unsorted sub-array
-        for (int i = 0; i < n - 1; i++)
-        {
-            // Find the minimum element in unsorted array
-            int min_idx = i;
-            
-            for (int j = i + 1; j < n; j++){
-            	
-                if (array[j] < array[min_idx]){
-                	
-                    min_idx = j;
-                }
-
-            	iterations++;
-            }
-            // Swap the found minimum element with the first element
-            int temp = array[min_idx];
-            array[min_idx] = array[i];
-            array[i] = temp;
-        }
-        
-        return iterations;
-	}
-	
-	//My custom SelectionSort method
-	private int customSort(int[] array, int iterations){
-		
-		int min, minIndx;
-		//boolean isSorted;
-		
-		//SelectionSort
-		for(int a = 0; a < array.length - 1; a++){
+		for(int i = 0; i < array.length; i++){
 			
-			min = array[a];
-			minIndx = a;
+			int min = i;
 			
-			for(int b = a + 1; b < array.length; b++){
+			for(int j = i + 1; j < array.length; j++){
 				
-				if(array[b] < min){
+				if(array[min] > array[j]){
 					
-					min = array[b];
-					minIndx = b;
-					//isSorted = false;
+					min = j; //Min value index
 				}
 				
-				iterations++;
+				iterations++; //Total iterations
 			}
 			
-			if(minIndx > a){
+			if(array[i] > array[min]){
 				
-				int temp = array[minIndx];
-				array[minIndx] = array[a];
-				array[a] = temp;
-			}
-			else{
-				//Array is sorted
-				break;
+				int temp = array[i];
+				array[i] = array[min];
+				array[min] = temp;
+				
+				if(isDebug){
+					System.out.println(Arrays.toString(array));
+				}
 			}
 		}
 		
 		return iterations;
 	}
+	
 	
 	@Override
 	public void search() {}

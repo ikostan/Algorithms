@@ -28,123 +28,45 @@ public class BubbleSort extends SearchClass implements SearchMethod, Runnable{
 			
 		String start = "Unsorted array\n" + Arrays.toString(array);
 		System.out.println(start + "\n");
-		boolean isSorted = true;
+		boolean isSorted = false;
 		
-		iterations = methodByTheBook(array, isSorted, iterations); //By the book method
-		//iterations = conventionalMethod(array, isSorted, iterations); //By the book method
-		//iterations = hackerRankVersion(array, isSorted, iterations);
-		//iterations = methodCustom(array, isSorted, iterations); //My custom method
+		iterations = bubbleSort(array, iterations, isSorted, true); //By the book method
 			
 		String output = "Array is sorted after " + iterations + " iterations";
 		String sortedArray = Arrays.toString(array);
 		System.out.println(output + "\n" + sortedArray + "\n");
 	}
 	
-	//By the book method
-	private int methodByTheBook(int[] array, boolean isSorted, int iterations){
+	
+	//BubbleSort method
+	private int bubbleSort(int[] array, int iterations, boolean isSorted, boolean isDebug){
 		
 		for(int i = 0; i < array.length - 1; i++){
 			
-			isSorted = true;
+			int swaps = 0;
 			
-			for(int b = 0; b < array.length - i - 1; b++){
+			for(int j = 0; j < array.length - i - 1; j++){
+				
+				if(array[j] > array[j+1]){
 					
-				if(array[b] > array[b + 1]){
-						
-					int temp = array[b];
-					array[b] = array[b + 1];
-					array[b + 1] = temp;
-					isSorted = false;
+					int temp = array[j];
+					array[j] = array[j+1];
+					array[j+1] = temp;
+					swaps++;
 				}
-					
-				iterations++;
+				
+				iterations++; //Total iterations
 			}
 			
-			if(isSorted){
-				//Array is sorted
-				break;
+			if(isDebug){
+				//Debug
+				System.out.println(Arrays.toString(array));
 			}
 		}
 		
 		return iterations;
 	}
 	
-	//By the book method
-	private int conventionalMethod(int[] array, boolean isSorted, int iterations){
-			
-		for(int i=0; i < array.length - 1; i++){ 
-			
-			for(int j=1; j < (array.length - i); j++){
-            	
-				if(array[j-1] > array[j]){  
-					//swap elements  
-					int temp = array[j-1];  
-					array[j-1] = array[j];  
-					array[j] = temp;  
-				}  
-				
-				iterations++;   
-			}  
-		}  
-						
-		return iterations;
-	}
-	
-	//By the book method
-	private int hackerRankVersion(int[] array, boolean isSorted, int iterations){
-		
-		isSorted = false;
-		int lastUnsorted = array.length - 1;
-		
-		while(!isSorted){
-			
-			isSorted = true;
-			for(int i = 0; i < lastUnsorted; i++){
-				
-				if(array[i] > array[i + 1]){
-					
-					int temp = array[i + 1];
-					array[i + 1] = array[i];
-					array[i] = temp;
-					
-					isSorted = false;
-				}
-				
-				iterations++;
-			}
-		}
-		
-		return iterations;
-	}
-	
-	//My custom method
-	private int methodCustom(int[] array, boolean isSorted, int iterations){
-		
-		for(int i = 0; i < array.length - 1; i++){
-			
-			isSorted = true;
-			
-			for(int b = i + 1; b < array.length; b++){
-					
-				if(array[i] > array[b]){
-						
-					int temp = array[b];
-					array[b] = array[i];
-					array[i] = temp;
-					isSorted = false;
-				}
-					
-				iterations++;
-			}
-			
-			if(isSorted){
-				//Array is sorted
-				break;
-			}
-		}
-		
-		return iterations;
-	}
 	
 	@Override
 	public void search(){}

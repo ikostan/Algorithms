@@ -36,31 +36,28 @@ public class InsertionSort extends SearchClass implements SearchMethod, Runnable
 	//By the book method
 	private void insertionSort(int[] array, int iterations, boolean isDebug){
 		
-		//int swap = 0;
-		
-		// InsertionSort algorithm
-		for(int i = 1; i < array.length; i++){
+		for(int i = 0; i < array.length - 1; i++){
 			
-			int j = i;
-			int B = array[j];
+			int j = i + 1;
 			
-			while((j>0) && (B<array[j-1])){
+			while((j > 0) && (array[j] < array[j-1])){
 				
+				int temp = array[j];
 				array[j] = array[j-1];
+				array[j-1] = temp;
 				j--;
-				iterations++;
 				
-				if(isDebug){
-					//Debug output
-					System.out.println((Arrays.toString(array)));
-				}
+				iterations++; //Total number of iterations
 			}
 			
-			array[j] = B; 
+			iterations++;
+			if(isDebug){
+				System.out.println(Arrays.toString(array)); //Debug
+			}
 		}
+		
 				
 		String output = "Array is sorted after " + iterations + " iterations";
-		//String swaps = "Total swaps " + iterations + " iterations";
 		String sortedArray = Arrays.toString(array);
 		System.out.println(output + "\n" + sortedArray + "\n");
 			

@@ -13,7 +13,7 @@ public class Test {
 		
 		//Test data
 		//intArray = new int[]{50,6,5,0,12,30,-5,23,13,-12,7,2,3,4,8,1,9,-3,-8,18,-20,33,40,47,55}; 				
-		intArray = new int[]{4,3,2,1};
+		intArray = new int[]{7,3,6,4,1,5,2};
 		
 		BinarySearch binary = new BinarySearch(intArray);
 		bnThread = new Thread(binary);
@@ -43,11 +43,13 @@ public class Test {
 		runThreads(); //Multi-Threaded process. Uncomment relevant method (see inside runThreads method)
 		
 		//Uncomment relevant method (see below) in order to run it (NOTE: single-threaded)
+		
 		//binarySearch();
 		//linearSearch();
-		//bubbleSort();
-		insertionSort();		
-		//selectionSort();
+		
+		bubbleSort();		
+		selectionSort();
+		insertionSort();
 		//quickSort();
 		//mergeSort();
 	}
